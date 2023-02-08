@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Ninja</title>
+</head>
+<style>
+    body {
+        background-image: url("https://w0.peakpx.com/wallpaper/624/13/HD-wallpaper-jiraiya-epic-gama-naruto-pose-presentation-sanin-sapo-shippuden-toad.jpg");
+        background-size: cover;
+        color: white;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    label {
+        font-size: 1.5em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+        font-size: 1em;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #ff0000;
+        width: 300px;
+    }
+
+    input[type="submit"] {
+        font-size: 1.5em;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        margin-top:
+    }
+</style>
+
+<body>
+    <a href="/allNars">Back to All ninjas</a>
+    <br>
+
+    <form action="/api/createOneNar" method="post">
+
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="village">Village</label>
+        <input type="text" id="village" name="village"><br><br>
+
+        <label for="element">Element</label>
+        <input type="text" id="element" name="element"><br><br>
+
+        <label for="Moves">Clan</label>
+        <input type="text" id="Moves" name="Moves" size="50"><br><br>
+
+        <label for="personalities">Personalities:</label>
+        <input type="text" id="personalities" name="personalities"><br><br>
+
+        <label for="appearance">Appearance:</label>
+        <input type="text" id="appearance" name="appearance"><br><br>
+
+        <label for="specialabilities">Special Abilities:</label>
+        <input type="text" id="specialabilities" name="specialabilities"><br><br>
+
+        <label for="relationships">Relationships:</label>
+        <input type="text" id="relationships" name="relationships"><br><br>
+
+        <label for="motivations">Motivations:</label>
+        <input type="text" id="motivations" name="motivations"><br><br>
+
+        <input type="submit" value="Create Ninja">
+    </form>
+</body>
+
+</html>

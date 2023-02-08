@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update <%=naruto.name%>
+    </title>
+    <style>
+        body {
+            background-color: #FFD700;
+            /* pale yellow color */
+            font-family: 'Manga Temple', sans-serif;
+        }
+
+        h1 {
+            color: #E84A27;
+            /* orange-red color */
+            text-align: center;
+        }
+
+        form {
+            width: 600px;
+            margin: 20px auto;
+            border: 2px solid #E84A27;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 5px 0;
+            font-size: 16px;
+            color: #E84A27;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            border: 1px solid #E84A27;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            border: 2px solid #E84A27;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #FFD700;
+            color: #E84A27;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #E84A27;
+            color: #FFD700;
+        }
+
+        a {
+            display: block;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #E84A27;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/oneNar/<%=naruto.name%>">Back to <%=naruto.name%> info</a>
+
+    <form action="/api/updateOneNaruto/<%=naruto.name%>?_method=PUT" method="post">
+
+
+        <label for="name">Name</label>
+        <input type="text" placeholder="<%=naruto.name%>" value="<%=naruto.name%>" id="name" name="name"><br><br>
+
+        <label for="village">Village</label>
+        <input type="text" placeholder="<%=naruto.village%>" value="<%=naruto.village%>" id="village"
+            name="village"><br><br>
+
+        <label for="element">Element</label>
+        <input type="text" placeholder="<%=naruto.element%>" value="<%=naruto.element%>" id="element"
+            name="element"><br><br>
+
+        <label for="Moves">Clan</label>
+        <input type="text" placeholder="<%=naruto.clan%>" value="<%=naruto.clan%>" id="Moves" name="Moves"
+            size="50"><br><br>
+
+        <label for="personalities">Personalities:</label>
+        <input type="text" placeholder="<%=naruto.personalities%>" value="<%=naruto.personalities%>" id="personalities"
+            name="personalities"><br><br>
+
+        <label for="appearance">Appearance:</label>
+        <input type="text" placeholder="<%=naruto.appearance%>" value="<%=naruto.appearance%>" id="appearance"
+            name="appearance"><br><br>
+
+        <label for="specialabilities">Special Abilities:</label>
+        <input type="text" placeholder="<%=naruto.specialabilities%>" value="<%=naruto.specialabilities%>"
+            id="specialabilities" name="specialabilities"><br><br>
+
+        <label for="relationships">Relationships:</label>
+        <input type="text" placeholder="<%=naruto.relationships%>" value="<%=naruto.relationships%>" id="relationships"
+            name="relationships"><br><br>
+
+        <label for="motivations">Motivations:</label>
+        <input type="text" placeholder="<%=naruto.motivations%>" value="<%=naruto.motivations%>" id="motivations"
+            name="motivations"><br><br>
+
+        <input type="submit" name="_method" value="Update Ninja">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var css = `
+                body {
+                    background-image: url('https://wallpapercave.com/wp/wp6952645.jpg');
+                    background-size: cover;
+                    font-family: 'Courier New', Courier, monospace;
+                    color: orange;
+                    text-align: center;
+                }
+        
+                h1 {
+                    font-size: 3em;
+                    margin-top: 25%;
+                }
+        
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1.5em;
+                    margin: 15px;
+                }
+        
+                a:hover {
+                    color: yellow;
+                }
+            `;
+
+        var style = document.createElement('style');
+        style.innerHTML = css;
+        document.head.appendChild(style);
+    </script>
+</head>
+
+<body>
+    <h1>
+        Welcome to our Naruto App
+    </h1><br>
+    <a href="/">Go back to home page</a><br>
+    <a href="/allNars"> See all Ninjas</a><br>
+    <ul>
+        Favorite Ninjas:
+        <% favoriteNaruto.forEach(function(nar){ %>
+            <li>
+                <a href="/oneNar/<%=nar%>">
+                    <%=nar%>
+                </a>
+            </li>
+            <%}); %>
+    </ul>
+    <a href="/logout">Click here to log out</a>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: aliceblue;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Shojumaru', sans-serif;
+            color: #FFD700;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            margin: 20px 0;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #E84A27;
+            text-transform: uppercase;
+            margin: 0;
+            border-bottom: 5px solid #FFD700;
+        }
+
+        .header a {
+            font-size: 1.5em;
+            color: #E84A27;
+            text-decoration: none;
+        }
+
+        .header a:hover {
+            color: #FFD700;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: 20px 0;
+        }
+
+        .info p {
+            font-size: 1.5em;
+            margin: 10px 0;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .info p.last {
+            border-bottom: none;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            border: 2px solid #E84A27;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.5em;
+            color: #FFD700;
+            font-weight: bold;
+            background-color: #E84A27;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #FFD700;
+            color: #E84A27;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            background-color: #333333;
+            color: #ffffff;
+            height: 50px;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        footer a:hover {
+            color: #ffa500;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>
+            <%=naruto.name%>
+        </h1>
+        <a href="/allNars">Back to all Ninjas</a>
+    </div>
+    <div class="info">
+        <p>Village: <%=naruto.village%>
+        </p>
+        <p>Element: <%=naruto.element%>
+        </p>
+        <p>Clan: <%=naruto.clan%>
+        </p>
+        <p>Personalities: <%= naruto.personalities%>
+        </p>
+        <p>Appearance: <%= naruto.appearance%>
+        </p>
+        <p>Special Abilities: <%= naruto.specialabilities%>
+        </p>
+        <p>Relationships: <%= naruto.relationships%>
+        </p>
+        <p class="last">Motivations: <%= naruto.motivations%>
+        </p>
+    </div>
+    <a href="/updateNar/<%= naruto.name %>">Update this ninja</a>
+    <br>
+    <br>
+    <% if(loggedIn && !userFaves.includes(naruto._id)){%>
+        <form action="/api/user/addFavoriteNaruto?_method=PUT" method="post">
+            <input type="hidden" name="narutoId" value="<%=naruto._id%>">
+            <input type="submit" name="_method" value="Add this Ninja to favorites">
+        </form>
+        <%}%>
+            <br>
+            <br>
+            <form action="/api/deleteOneNaruto/<%=naruto.name%>?_method=DELETE" method="post">
+                <input type="submit" name="_method" value="DELETE THIS NINJA">
+            </form>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* naruto.css */
+        header {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c9/Naruto_logo.svg');
+            background-position: center;
+            background-size: contain;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #ff9933;
+            color: transparent;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ffffcc;
+        }
+
+        li h3 {
+            margin: 0;
+        }
+
+        li p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Naruto</h1>
+    </header>
+    <a href="http://localhost:4400/">Homepage</a>
+    <h2>List of Characters</h2>
+    <a href="http://localhost:4400/createOneNar">Add a new character</a>
+    <ul>
+        <% naruto.forEach(character=> { %>
+            <li>
+                <h3>
+                    <a href="/oneNar/<%=character.name%>">
+                        <%= character.name %>
+                    </a>
+                </h3>
+                <p>Village: <%= character.village %>
+                </p>
+                <p>Element: <%= character.element %>
+                </p>
+                <p>Clan: <%= character.clan %>
+                </p>
+                <p>Personalities: <%= character.personalities %>
+                </p>
+                <p>Appearance: <%= character.appearance %>
+                </p>
+                <p>Special Abilities: <%= character.specialabilities %>
+                </p>
+                <p>Relationships: <%= character.relationships %>
+                </p>
+                <p>Motivations: <%= character.motivations %>
+                </p>
+            </li>
+            <% }) %>
+    </ul>
+
+
+</body>
+
+</html>
