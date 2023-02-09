@@ -66,7 +66,7 @@ async function renderSignUpForm(req, res) {
 
 async function renderLogInForm(req, res) {
     try {
-        res.render("logIn");
+        res.render("login");
     } catch (error) {
         console.log(`renderLogInForm error: ${error}`);
     }
@@ -92,7 +92,7 @@ async function renderUserPage(req, res) {
             });
 
         } else {
-            res.redirect("/logIn")
+            res.redirect("/login")
         }
     } catch (error) {
         console.log(`renderUserPage error: ${error}`)
