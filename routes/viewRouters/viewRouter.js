@@ -23,7 +23,7 @@ router.get("/updateNar/:name", renderUpdateNarutoForm);
 
 router.get("/signUp", renderSignUpForm);
 
-router.get("/logIn", renderLogInForm);
+router.get("/login", renderLogInForm);
 
 
 //localhost:3000/user
