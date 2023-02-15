@@ -42,6 +42,10 @@ app.use(sessions({
 const userRouter = require("./routes/api/userRouter");
 app.use("/api/user", userRouter);
 
+const narutoRouter = require("./routes/api/narutoRouter");
+app.use("/api", narutoRouter);
+
+
 
 // Front-end
 const viewsRouter = require("./routes/viewRouters/viewRouter");
