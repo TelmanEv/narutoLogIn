@@ -24,7 +24,7 @@ async function createUser(req, res) {
         await User.create(userObj);
 
 
-        res.redirect("/logInUser")
+        res.redirect("/user")
     } catch (err) {
         console.log(`createUser error: ${err}`);
 
