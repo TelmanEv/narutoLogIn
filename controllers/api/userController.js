@@ -21,10 +21,11 @@ async function createUser(req, res) {
         }
 
         //Insert the user document into the database
-        await User.create(userObj);
+        const user = await User.create(userObj);
 
+        // Redirect to the user's personalized page
+        res.redirect(`/user/${user.username}`); // or `/user/${user._id}` if the user's unique identifier is their ID
 
-        res.redirect("/user")
     } catch (err) {
         console.log(`createUser error: ${err}`);
 
